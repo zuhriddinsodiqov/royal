@@ -1,0 +1,456 @@
+@import './_global';
+@mixin card(){
+    width: 100%;
+    padding: 4rem 0;
+}
+@mixin grid ($repeat){
+    display: grid;
+    grid-template-columns:$repeat ;
+    gap: 3rem;
+    // align-items: center;
+}
+@mixin title (){
+    text-align: center;
+    margin-bottom: 1rem;
+}
+@mixin btn ($bgc, $first, $bgcc, $color){
+    padding: 10px 20px;
+    background-color: $bgc;
+    color: $first;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: all 0.5s linear;
+    border: 0;
+    &:hover{
+        background-color: $bgcc;
+        color: $color;
+    }
+}
+.navigation{
+    width: 100%;
+    height: 20vh;
+    background-color: #1F233E;
+    .navbar{
+        height: 20vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .nav__logo{
+            img{
+                width: 60%;
+                height: 60%;
+            }
+        }
+        .navbar__nav{
+            a{
+                color: #fff;
+                margin-right: 20px;
+                margin-left: 20px;
+                font-size: 1.3rem;
+            }
+            .fa-search{
+                font-size: 1.3rem;
+                color: #fff ;
+            }
+            .fa-bars{
+                color: #fff;
+                font-size: 1.3rem;
+                display: none;
+            }
+        }
+    }
+}
+.header{
+    @include card();
+    padding: 0;
+    background-image: url(/images/banner.jpg);
+    background-size: cover;
+    .banner{
+        @include grid(90% 10%);
+        gap: 5rem;
+        height: 100%;
+        align-items: center;
+        color: #fff;
+    
+        .guard{
+            width: 12px;
+            p{
+                text-align: center;
+                word-break: break-word;
+                text-transform: uppercase;
+            }
+        }
+        .text{
+            padding: 10rem;
+            h2{
+                font-size: 2.6rem;
+            }
+            h1{
+                font-size: 3rem;
+            }
+            button{
+                @include btn(blue, #fff, black, red);
+                margin-top: 2rem;
+                border-radius: 0;
+                img{
+                    width: 20%;
+                    height: 20%;
+                    display: inline;
+                }
+            }
+        }
+    }
+}
+.welcome{
+    @include card();
+}
+.welcome__content{
+    @include grid(repeat(2,1fr));
+    gap: 5rem;
+    .item{
+        h3{
+            font-size: 1.8rem;
+            border-bottom: 1px solid  green;
+            display: inline;
+            color: blue;
+        }
+        h2{
+            font-size: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 1.3rem;
+            border: 0;
+                background-color: rgba($color: #fff, $alpha: 1.0);
+                margin-top: 2rem;
+                border-radius: 0;
+                img{
+                    width: 20%;
+                    height: 20%;
+                    display: inline;
+                }
+            }
+    }
+}
+.services{
+    @include card();
+    text-align: center;
+    .title{
+        @include title();
+        text-align-last: left;
+        h3{
+            font-size: 2rem;
+            color: #002aff;
+            border-bottom: 1px solid green;
+            display: inline;
+        }
+        h2{
+            font-size: 2.2rem;
+        }
+    }
+    button{
+        padding: 10px 20px;
+        font-size: 1.3rem;
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        border: 0;
+        margin-top: 0.5rem;
+        img{
+            width: 20%;
+            height: 30%;
+            display: inline;
+        }
+    }
+}
+.services__content{
+    @include grid(60% 40%);
+    gap:0;
+    .item{
+        height: 70vh;
+        background-image: url(/images/s-1.jpg);
+        background-size: 100% 80vh;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover a{
+            padding: 1.3rem 1.2rem;
+            background-color: #002aff;
+        }
+        a{
+            color: #fff;
+        }
+    }
+    .item2{
+        height: 70vh;
+        background-image: url(/images/s-2.jpg);
+        background-size: 100% 80vh;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover a{
+            padding: 1.3rem 1.2rem;
+            background-color: #002aff;
+        }
+        a{
+            color: #fff;
+        }
+    }
+}
+.ser__content{
+    @include grid(40% 60%);
+    gap:0;
+    .item{
+        height: 70vh;
+        background-image: url(/images/s-3.jpg);
+        background-size: 100% 80vh;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover a{
+            padding: 1.3rem 1.2rem;
+            background-color: #002aff;
+        }
+        a{
+            color: #fff;
+        }
+    }
+    .item2{
+        height: 70vh;
+        background-image: url(/images/s-4.jpg);
+        background-size: 100% 80vh;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover a{
+            padding: 1.3rem 1.2rem;
+            background-color: #002aff;
+        }
+        a{
+            color: #fff;
+        }
+    }
+}
+.security{
+    @include card();
+    text-align: center;
+    margin: 0 auto;
+    .title{
+        @include title();
+        h3{
+            font-size: 2rem;
+            color: #002aff;
+            border-bottom: 1px solid green;
+            display: inline;
+        }
+        h2{
+            font-size: 2.2rem;
+        }
+    }
+    button{
+        padding: 10px 20px;
+        font-size: 1.3rem;
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        border: 0;
+        margin-top: 0.5rem;
+        img{
+            width: 20%;
+            height: 30%;
+            display: inline;
+        }
+    }
+}
+.security__content{
+    .item{
+        width: 20%;
+        height: 70vh;
+        background-image: url(/images/security-1.jpg);
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        &:hover a{
+            opacity: 1;
+        }
+        a{
+            text-align:center;  
+            color: #fff;
+            padding: 10px 15px;
+            border: 1px solid white;
+            opacity: 0;
+        }
+    }
+    .item2{
+        width: 20%;
+        height: 70vh;
+        background-image: url(/images/security-2.jpg);
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        &:hover a{
+            opacity: 1;
+        }
+        a{
+            text-align:center;
+            color: #fff;
+            padding: 10px 15px;
+            border: 1px solid white;
+            opacity: 0;
+        }
+    }
+    .item3{
+        width: 20%;
+        height: 70vh;
+        background-image: url(/images/security-3.jpg);
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        &:hover a{
+            opacity: 1;
+        }
+        a{
+            text-align:center;
+            color: #fff;
+            padding: 10px 15px;
+            border: 1px solid white;
+            opacity: 0;
+            
+        }
+    }
+
+
+
+
+}
+.our{
+    @include card();
+}
+.our__content{
+    padding: auto;
+    @include grid(repeat(2,1fr));
+    background-color: whitesmoke;
+    box-shadow: 0 0  20px black;
+    align-items: center;
+    .item{
+        h3{
+            font-size: 2rem;
+            color: #002aff;
+            border-bottom: 1px solid green;
+            display: inline;
+        }
+        h2{
+            font-size: 2.2rem;
+        }
+    }
+    button{
+        padding: 10px 20px;
+        font-size: 1.3rem;
+        background-color: rgba($color: whitesmoke, $alpha: 1.0);
+        border: 0;
+        margin-top: 0.5rem;
+        img{
+            width: 20%;
+            height: 30%;
+            display: inline;
+        }
+    }
+    }
+.contact{
+    @include card();
+    padding: 0;
+    gap:0;
+}
+.contact__content{
+    @include grid(repeat(2,1fr));
+    gap: 0;
+    .item{
+        background-image: url(/images/guards.jpg);
+        form{
+            width: 60%;
+            height: 50vh;
+            background-color: #fff;
+            margin-top: 5rem;
+            margin-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            input{
+                height: 10vh;
+                margin-bottom: 0.5rem;
+                border: 0;
+                border-bottom: 1px solid green;
+                font-size: 1.3rem;
+            }
+            button{
+                @include btn(blue, white, black, red);
+                border-radius: 0;
+                width: 50%;
+            }
+        }
+    }
+}
+.footer{
+    @include card();
+    background-color: black;
+    color: #fff;
+}
+.footer__content{
+    @include grid(repeat(3,1fr));
+    a{
+        color: #fff;
+        display: block;
+        left: 10px;
+        margin-bottom: 1rem;
+        img{
+            width: 10%;
+            height: 10%;
+            display: inline;
+        }
+    }
+    h2{
+        margin-bottom: 1rem;
+    }
+    .item1{
+        padding: 2rem;
+    }
+    .item{
+        form{
+            input{
+                width: 80%;
+                height: 10vh;
+                font-size: 1.3rem;
+                border: 0;
+                outline: 0;
+                text-indent: 10px;
+            }
+    }
+    .fa-brands {
+        padding: 7px 10px;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+}
+button{
+    @include btn(blue, white, red, black);
+    margin-top: 1rem;
+}
+}
+.copy{
+    padding: 2rem;
+    background-color: #002aff;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #fff;
+    a{
+        color: #fff;
+    }
+}

@@ -1,0 +1,26 @@
+@media only screen and (max-width: 768px) {
+  .navbar__nav a {
+    display: none;
+  }
+  .navbar__nav .fa-bars {
+    display: block;
+  }
+  .navbar__nav .fa-search {
+    display: none;
+  }
+  .welcome__content, .services__content, .ser__content, .our__content, .contact__content, .footer__content{
+    grid-template-columns: 1fr;
+  }
+  .security__content{
+    grid-template-columns: 1fr;
+  }
+  .security__content .item{
+    width: 80%;
+  }
+  .security__content .item2{
+    width: 80%;
+  }
+  .security__content .item3{
+    width: 80%;
+  }
+}/*# sourceMappingURL=responsiv.css.map */
